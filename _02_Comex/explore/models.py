@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.db import models
 from flax_id.django.fields import FlaxId
 
+
 # Create your models here.
 class Category(models.Model):
     id = FlaxId(primary_key=True)
@@ -12,6 +13,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Partnership(models.Model):
     id = FlaxId(primary_key=True)

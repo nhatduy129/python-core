@@ -20,5 +20,6 @@ from explore import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^category', views.categoryList.as_view())
+    url(r'^category', views.CategoryList.as_view()),
+    url(r'^partnership', views.PartnershipList.as_view()),
 ]
