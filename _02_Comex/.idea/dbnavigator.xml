@@ -27,7 +27,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="c90c01f8-b44e-4641-9427-a18cece0a321">
-      <console name="Connection" type="STANDARD" schema="main" session="Main"><![CDATA[select * from explore_partnership]]></console>
+      <console name="Connection" type="STANDARD" schema="main" session="Main"><![CDATA[select * from explore_category]]></console>
       <console name="_02_Comex_sqlite" type="STANDARD" schema="main" session="Main" />
     </connection>
   </component>

@@ -25,7 +25,7 @@ class Command(BaseCommand):
 
 def clear_data():
     """Deletes all the table data"""
-    print("Delete Address instances")
+    print("Delete categories instances")
     Category.objects.all().delete()
 
 
@@ -51,6 +51,6 @@ def run_seed(self, mode):
         return
 
     # Creating 15 addresses
-    for i in range(15):
+    for i in range(5):
         create_category()
 
