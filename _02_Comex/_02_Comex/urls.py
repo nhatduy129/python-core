@@ -20,6 +20,6 @@ from explore import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^category', views.CategoryList.as_view()),
-    url(r'^partnership', views.PartnershipList.as_view()),
+    url(r'^category', views.CategoryViewSet.as_view({'get': 'list'})),
+    url(r'^partnership', views.PartnershipViewSet.as_view({'get': 'list'})),
 ]

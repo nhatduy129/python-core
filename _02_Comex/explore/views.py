@@ -5,10 +5,9 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
-from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.pagination import PageNumberPagination
-from rest_framework import status
+from rest_framework import status, viewsets
 from .models import Category
 from .models import Partnership
 from .serializers import CategorySerializer
@@ -20,25 +19,17 @@ class StandardResultsSetPagination(PageNumberPagination):
     max_page_size = 100
 
 # Create your views here.
-class CategoryList(APIView):
-    def get(self, request):
-        res = Category.objects.all()
-        serializer = CategorySerializer(res, many=True)
-        return Response(serializer.data)
-
-    def post(self):
-        pass
+class CategoryViewSet(viewsets.ModelViewSet):
+    serializer_class = CategorySerializer
+    def get_queryset(self):
+        return Category.objects.all()
 
 
-class PartnershipList(APIView):
+class PartnershipViewSet(viewsets.ModelViewSet):
+    serializer_class = PartnershipSerializer
     pagination_class = StandardResultsSetPagination
-
-    def get(self, request):
-        # res = Partnership.objects.all()
-        # serializer = PartnershipSerializer(res, many=True)
-        # return Response(serializer.data)
-        Partnership.objects.prefetch_related(
-            'events').all().order_by('-created')
-
-    def post(self):
-        pass
+    def get_queryset(self):
+        category_id = self.request.query_params.get('category', None)
+        if category_id:
+            return Partnership.objects.filter(category=category_id)
+        return Partnership.objects.all()
