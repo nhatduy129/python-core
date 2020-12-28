@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="81216a23-2644-46fd-b9b2-aa3194ee4f46" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/_02_Comex.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_02_Comex/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_02_Comex/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_02_Comex/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_02_Comex/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/explore/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/explore/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/explore/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/explore/management/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/explore/management/commands/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/explore/management/commands/seed_category.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/explore/management/commands/seed_partnership.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/explore/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/explore/migrations/0002_auto_20200527_1648.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/explore/migrations/0003_auto_20200527_1737.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/explore/migrations/0004_auto_20200527_1745.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/explore/migrations/0005_auto_20200528_0226.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/explore/migrations/0006_auto_20200528_0233.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/explore/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/explore/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/explore/serializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/explore/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/explore/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flax_id/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flax_id/baker_recipes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flax_id/django/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flax_id/django/fields.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flax_id/django/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flax_id/flax_id.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flax_id/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1cUtvgVOfJJwUR1PDSfalkNTdAo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="RainbowCSV.Settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/explore" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="81216a23-2644-46fd-b9b2-aa3194ee4f46" name="Default Changelist" comment="" />
+      <created>1590595231975</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590595231975</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="305" y="171" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590646516047">
+      <screen x="0" y="23" width="1680" height="972" />
+    </state>
+    <state x="305" y="171" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.972@0.23.1680.972" timestamp="1590646516047" />
+    <state x="557" y="318" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590665905948">
+      <screen x="0" y="23" width="1680" height="972" />
+    </state>
+    <state x="557" y="318" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.972@0.23.1680.972" timestamp="1590665905948" />
+    <state x="490" y="225" key="DBNavigator.ConnectionInfoDialog" timestamp="1590646057782">
+      <screen x="0" y="23" width="1680" height="972" />
+    </state>
+    <state x="490" y="225" key="DBNavigator.ConnectionInfoDialog/0.23.1680.972@0.23.1680.972" timestamp="1590646057782" />
+    <state x="429" y="231" key="DBNavigator.DatasetFilterDialog" timestamp="1590646015021">
+      <screen x="0" y="23" width="1680" height="972" />
+    </state>
+    <state x="429" y="231" key="DBNavigator.DatasetFilterDialog/0.23.1680.972@0.23.1680.972" timestamp="1590646015021" />
+    <state x="378" y="171" key="DBNavigator.ProjectSettingsDialog" timestamp="1590660591455">
+      <screen x="0" y="23" width="1680" height="972" />
+    </state>
+    <state x="378" y="171" key="DBNavigator.ProjectSettingsDialog/0.23.1680.972@0.23.1680.972" timestamp="1590660591455" />
+    <state x="341" y="148" key="SettingsEditor" timestamp="1590650649594">
+      <screen x="0" y="23" width="1680" height="972" />
+    </state>
+    <state x="341" y="148" key="SettingsEditor/0.23.1680.972@0.23.1680.972" timestamp="1590650649594" />
+  </component>
+</project>
