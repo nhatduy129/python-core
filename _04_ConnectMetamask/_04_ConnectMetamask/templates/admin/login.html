@@ -1,0 +1,127 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" href="{% static 'admin/css/login.css' %}">
+{{ form.media }}
+{% endblock %}
+
+{% block bodyclass %}{{ block.super }} login{% endblock %}
+
+{% block usertools %}{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block content_title %}{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block content %}
+{% if form.errors and not form.non_field_errors %}
+<p class="errornote">
+{% blocktranslate count counter=form.errors.items|length %}Please correct the error below.{% plural %}Please correct the errors below.{% endblocktranslate %}
+</p>
+{% endif %}
+
+{% if form.non_field_errors %}
+{% for error in form.non_field_errors %}
+<p class="errornote">
+    {{ error }}
+</p>
+{% endfor %}
+{% endif %}
+
+<div id="content-main">
+
+{% if user.is_authenticated %}
+<p class="errornote">
+{% blocktranslate trimmed %}
+    You are authenticated as {{ username }}, but are not authorized to
+    access this page. Would you like to login to a different account?
+{% endblocktranslate %}
+</p>
+{% endif %}
+
+<form action="/admin/login/" method="post" id="login-form">{% csrf_token %}
+  <div class="form-row">
+    {{ form.username.errors }}
+    {{ form.username.label_tag }} {{ form.username }}
+  </div>
+  <div class="form-row">
+    {{ form.password.errors }}
+    {{ form.password.label_tag }} {{ form.password }}
+    <input type="hidden" name="next" value="{{ next }}">
+  </div>
+  {% url 'admin_password_reset' as password_reset_url %}
+  {% if password_reset_url %}
+  <div class="password-reset-link">
+    <a href="{{ password_reset_url }}">{% translate 'Forgotten your password or username?' %}</a>
+  </div>
+  {% endif %}
+  <div class="submit-row">
+    <input type="submit" value="{% translate 'Log in' %}">
+    <button id="connect-wallet-button" class="button btn-connect" type="button">Connect Wallet</button>
+</div>
+</div>
+<style>
+    .btn-connect {
+        padding: 10px 15px !important;
+        margin-left: 10px !important;
+    }
+    .btn-connect a {
+        color: white !important;
+    }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@metamask/detect-provider"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const connectWalletButton = document.getElementById("connect-wallet-button");
+      const usernameInput = document.getElementById("id_username");
+      setTimeout(function() {
+          if (window.ethereum.selectedAddress && window.ethereum.networkVersion == "97") {
+        usernameInput.value = window.ethereum.selectedAddress
+    }
+    }, 500)
+      connectWalletButton.addEventListener("click", async function() {
+        console.log(window.ethereum.selectedAddress)
+        if (window.ethereum.selectedAddress && window.ethereum.networkVersion == "97") {
+            alert("Connected to this site")
+            return
+        }
+        try {
+            // Request connection to Metamask with BSC Testnet
+            await window.ethereum.request({
+            method: 'wallet_addEthereumChain',
+            params: [
+                {
+                chainId: '0x61', // BSC Testnet chain ID
+                chainName: 'Binance Smart Chain Testnet',
+                rpcUrls: ['https://data-seed-prebsc-1-s1.binance.org:8545'], // BSC Testnet RPC endpoint
+                nativeCurrency: {
+                    name: 'BNB',
+                    symbol: 'BNB',
+                    decimals: 18,
+                },
+                blockExplorerUrls: ['https://testnet.bscscan.com'], // BSC Testnet block explorer URL
+                },
+            ],
+            });
+
+          // Request connection to Metamask
+          const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+          
+          if (accounts.length > 0) {
+            const address = accounts[0];
+            usernameInput.value = address
+          } else {
+            console.log("No accounts found");
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      });
+    });
+  </script>
+
+{% endblock %}
