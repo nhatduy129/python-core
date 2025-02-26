@@ -63,4 +63,27 @@ Ví dụ:
 Khi dùng `F expression`, Django ORM sẽ chạy UPDATE query trong database và các UPDATE query này sẽ chờ lẫn nhau nếu cùng dùng chung 1 row, do đó sẽ giải quyết được race condition.
 
 ## 3. Kiểm chứng
-Trong file `demoapp/models.py`, có 2 model `BadUser` và `GoodUser`.  
+### a. Cài đặt
+```bash
+virtualenv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python manage.py migrate
+```
+
+### b. Cấu trúc project
+```
+Trong file `demoapp/models.py`, có 3 model `BadUser`, `NormalUser`, `GoodUser`.  
+- `BadUser` không có bảo vệ chống race condition.
+- `NormalUser` có bảo vệ chống race condition bằng `select_for_update`. Bị race condition khi có nhiều threads cùng gọi 2 hàm xen kẽ nhau.
+- `GoodUser` có bảo vệ chống race condition bằng `F expression`. Không bị race condition dù có nhiều threads cùng gọi 2 hàm xen kẽ nhau.
+
+### c. Chạy pytest
+```bash
+pytest
+```
+Khi chạy pytest, sẽ thấy test_bad_user failed cả 3 test case, test_normal_user failed 2/3 test case, test_good_user passed hết.
+
+## 4. Kết luận
+- Nên dùng `F expression` để bảo vệ chống race condition. Khi có nhiều hàm khác nhau cùng thực thi.
+- Nên dùng `select_for_update` + `transaction.atomic` để bảo vệ chống race condition khi chỉ có 1 hàm thực thi. Nếu vẫn muốn dùng `select_for_update` và `transaction.atomic` thì phải gộp hàm. Ví dụ viết hàm `update_balance` để gộp cả 2 hàm `add_balance` và `reduce_balance`.
