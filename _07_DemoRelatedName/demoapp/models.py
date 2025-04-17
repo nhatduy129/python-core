@@ -49,3 +49,20 @@ class Coder(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Chatbot(models.Model):
+    name = models.CharField(max_length=100)
+    service = models.ForeignKey('Service', on_delete=models.CASCADE, related_name='chatbot')
+    demo_service = models.ForeignKey('Service', on_delete=models.CASCADE, related_name='demo_chatbot')
+    auto_reply = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name
+
+
+class Service(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
